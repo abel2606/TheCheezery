@@ -21,8 +21,18 @@ class MenuActivity : AppCompatActivity() {
 
         var btnCold: Button = findViewById(R.id.button_cold_drinks) as Button
 
-        btnCold.setOnClickListener {
-            var intent: Intent = Intent(this, ProductosActivity::class.java)
+        configurarBoton(R.id.button_cold_drinks, "coldDrinks")
+        configurarBoton(R.id.button_hot_drinks, "hotDrinks")
+        configurarBoton(R.id.button_sweets, "sweets")
+        configurarBoton(R.id.button_salties, "salties")
+        configurarBoton(R.id.button_hot_combos, "combos")
+        configurarBoton(R.id.button_customizable, "custom")
+    }
+    private fun configurarBoton(idBoton: Int, categoria: String) {
+        val boton: Button = findViewById(idBoton)
+        boton.setOnClickListener {
+            val intent = Intent(this, ProductosActivity::class.java)
+            intent.putExtra("categoria", categoria)
             startActivity(intent)
         }
     }
