@@ -22,7 +22,7 @@ class RegisterActivity : AppCompatActivity() {
         var button: Button = findViewById(R.id.sign_in_button) as Button
 
         button.setOnClickListener {
-            var intent: Intent = Intent(this, MainActivity::class.java)
+            var intent: Intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
         }
     }
